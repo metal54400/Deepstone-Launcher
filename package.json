@@ -1,8 +1,8 @@
 {
     "name": "Deepstone-Launcher",
     "preductname": "Deepstone Launcher",
-    "version": "0.0.5",
-    "description": "Launcher Mincraft pour le serveur Selvania",
+    "version": "0.0.6",
+    "description": "Launcher Mincraft pour le serveur Deepstone-Launcher",
     "main": "src/app.js",
     "author": {
         "name": "metal54400,luuxis, Inc.",
