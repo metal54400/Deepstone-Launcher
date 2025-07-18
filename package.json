@@ -1,7 +1,7 @@
 {
     "name": "Deepstone-Launcher",
     "preductname": "Deepstone Launcher",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Launcher Mincraft pour le serveur Selvania",
     "main": "src/app.js",
     "author": {
@@ -10,6 +10,7 @@
         "url": "https://github.com/metal54400, https://github.com/luuxis"
     },
     "url": "http://minecraft-farms.ddns.net:5502/launcher/config-launcher/config.json",
+    "url":"http://minecraft-farms.ddns.net:5502/files/index.php",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
