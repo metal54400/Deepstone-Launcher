@@ -9,7 +9,7 @@
         "email": "matheocillierfavier@gmail.com , contact@luuxis.fr",
         "url": "https://github.com/metal54400, https://github.com/luuxis"
     },
-    "url": "http://minecraft-farms.ddns.net:5502/files/index.php",
+    "url": "http://minecraft-farms.ddns.net:5502/launcher/config-launcher/config.json",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
