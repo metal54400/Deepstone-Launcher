@@ -6,10 +6,10 @@
     "main": "src/app.js",
     "author": {
         "name": "metal54400,luuxis, Inc.",
-        "email": "matheocillierfavier@gmail.com, contact@luuxis.fr",
+        "email": "matheocillierfavier@gmail.com , contact@luuxis.fr",
         "url": "https://github.com/metal54400, https://github.com/luuxis"
     },
-    "url": "http://minecraft-farms.ddns.net:5502/files",
+    "url": "http://minecraft-farms.ddns.net:5502/files/index.php",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
