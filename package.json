@@ -1,20 +1,20 @@
 {
-    "name": "deepstone-launcher",
+    "name": "Deepstone-Launcher",
     "preductname": "Deepstone Launcher",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Launcher Mincraft pour le serveur Selvania",
     "main": "src/app.js",
     "author": {
-        "name": "luuxis,metal54400, Inc.",
-        "email": "matheocillierfavier@gmail.com",
-        "url": "https://github.com/metal54400"
+        "name": "metal54400,luuxis, Inc.",
+        "email": "matheocillierfavier@gmail.com, contact@luuxis.fr",
+        "url": "https://github.com/metal54400, https://github.com/luuxis"
     },
     "url": "http://minecraft-farms.ddns.net:5502/files",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
         "build": "node build.js --obf=true --build=platform",
-        "icon": "node build.js --icon=http://minecraft-farms.ddns.net:8000/deepstone-icon.png"
+        "icon": "node build.js --icon=https://minecraft-farms.ddns.net:5501/pages/deepstone/deepstone-icon.png"
     },
     "license": "CCANC",
     "nodemonConfig": {
@@ -32,7 +32,7 @@
         "cross-env": "^7.0.3",
         "electron": "^30.5.1",
         "electron-builder": "^26.0.12",
-        "javascript-obfuscator": "^4.1.1",
+        "javascript-obfuscator": "^4.1.0",
         "jimp": "^0.22.12",
         "nodemon": "^3.1.2",
         "png2icons": "^2.0.1"
