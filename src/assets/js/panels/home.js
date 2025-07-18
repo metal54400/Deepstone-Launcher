@@ -29,16 +29,16 @@ class Home {
                     <div class="news-header">
                         <img class="server-status-icon" src="assets/images/icon.png">
                         <div class="header-text">
-                            <div class="title">Aucun news n'ai actuellement disponible.</div>
+                            <div class="title">Début du Launcher</div>
                         </div>
                         <div class="date">
-                            <div class="day">1</div>
-                            <div class="month">Janvier</div>
+                            <div class="day">18</div>
+                            <div class="month">Juillet</div>
                         </div>
                     </div>
                     <div class="news-content">
                         <div class="bbWrapper">
-                            <p>Vous pourrez suivre ici toutes les news relative au serveur.</p>
+                            <p>Version de minecraft 1.21.1</p>
                         </div>
                     </div>`
                 newsElement.appendChild(blockNews);
