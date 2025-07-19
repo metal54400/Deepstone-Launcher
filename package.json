@@ -1,7 +1,7 @@
 {
     "name": "Deepstone-Launcher",
     "preductname": "Deepstone Launcher",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "Launcher Mincraft pour le serveur Deepstone-Launcher",
     "main": "src/app.js",
     "author": {
@@ -9,8 +9,8 @@
         "email": "matheocillierfavier@gmail.com , contact@luuxis.fr",
         "url": "https://github.com/metal54400, https://github.com/luuxis"
     },
-    "url": "http://minecraft-farms.ddns.net:5502/launcher/config-launcher/config.json",
-    "url":"http://minecraft-farms.ddns.net:5502/files/index.php",
+    "url": "https://minecraft-farms.ddns.net:5501/launcher",
+   
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
