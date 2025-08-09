@@ -1,11 +1,11 @@
 {
     "name": "Deepstone-launcher",
     "preductname": "Deepstone Launcher",
-    "version": "0.1.4",
-    "description": "https://venstone.xyz",
+    "version": "0.0.12",
+    "description": "https://minecraft-farms.ddns.net:5501/pages/deepstone/index.html",
     "main": "src/app.js",
     "author": "Luuxis, metal54400_",
-    "url": "http://5.48.143.126:5504/launcher/config-launcher/config.json",
+    "url": "http://192.168.1.171:5506/",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
