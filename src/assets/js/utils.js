@@ -1,6 +1,6 @@
 /**
  * @author Luuxis
- * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
+ * Luuxis License v1.0 (voir fichier LICENSE pour les détails en FR/EN)
  */
 
 const { ipcRenderer } = require('electron')
@@ -36,6 +36,10 @@ async function setBackground(theme) {
     }
     body.style.backgroundImage = background ? background : theme ? '#000' : '#fff';
     body.style.backgroundSize = 'cover';
+    body.style.backgroundColor = '#292929ff';
+    body.style.backgroundRepeat = 'no-repeat';
+    body.style.backgroundPosition = 'center center';
+    body.style.backgroundAttachment = 'scroll';
 }
 
 async function changePanel(id) {
@@ -56,7 +60,7 @@ async function addAccount(data) {
     div.classList.add("account");
     div.id = data.ID;
     div.innerHTML = `
-        <div class="profile-image" ${skin ? 'style="background-image: url(' + skin + ');"' : ''}></div>
+        <div class="profile-image" style="background-image: url(https://venstone.xyz/skins/?pseudo=${data.name});"></div>
         <div class="profile-infos">
             <div class="profile-pseudo">${data.name}</div>
             <div class="profile-uuid">${data.uuid}</div>
@@ -71,15 +75,22 @@ async function addAccount(data) {
 async function accountSelect(data) {
     let account = document.getElementById(`${data.ID}`);
     let activeAccount = document.querySelector('.account-select')
+    headplayer(`${data.name}`);
 
     if (activeAccount) activeAccount.classList.toggle('account-select');
     account.classList.add('account-select');
     if (data?.profile?.skins[0]?.base64) headplayer(data.profile.skins[0].base64);
 }
 
-async function headplayer(skinBase64) {
-    let skin = await new skin2D().creatHeadTexture(skinBase64);
-    document.querySelector(".player-head").style.backgroundImage = `url(${skin})`;
+// async function headplayer(skinBase64) {
+//     let skin = await new skin2D().creatHeadTexture(skinBase64);
+//     document.querySelector(".player-head").style.backgroundImage = `url(${skin})`;
+// }
+
+ function headplayer(pseudo) {
+    //document.querySelector(".player-head").style.backgroundImage = `url(assets/images/default/steve.png)`;
+    document.querySelector(".player-head").style.backgroundImage = `url(https://venstone.xyz/skins/?pseudo=${pseudo})`;
+    document.getElementById("player-username").innerHTML = `${pseudo}`;
 }
 
 async function setStatus(opt) {
@@ -89,7 +100,7 @@ async function setStatus(opt) {
 
     if (!opt) {
         statusServerElement.classList.add('red')
-        statusServerElement.innerHTML = `Ferme - 0 ms`
+        statusServerElement.innerHTML = `Aucune connexion`
         document.querySelector('.status-player-count').classList.add('red')
         playersOnline.innerHTML = '0'
         return
@@ -103,11 +114,11 @@ async function setStatus(opt) {
     if (!statusServer.error) {
         statusServerElement.classList.remove('red')
         document.querySelector('.status-player-count').classList.remove('red')
-        statusServerElement.innerHTML = `En ligne - ${statusServer.ms} ms`
+        statusServerElement.innerHTML = '<span class="green">En ligne</span>'
         playersOnline.innerHTML = statusServer.playersConnect
     } else {
         statusServerElement.classList.add('red')
-        statusServerElement.innerHTML = `Ferme - 0 ms`
+        statusServerElement.innerHTML = `Aucune connexion`
         document.querySelector('.status-player-count').classList.add('red')
         playersOnline.innerHTML = '0'
     }

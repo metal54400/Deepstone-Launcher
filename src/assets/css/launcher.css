@@ -97,8 +97,11 @@ input::-webkit-inner-spin-button {
     color: #f8f9f9;
 }
 
+.darwin-icon-maximize {
+    display: none;
+}
+
 .darwin-icon-minimize,
-.darwin-icon-maximize,
 .darwin-icon-close {
     position: relative;
 }
@@ -162,6 +165,11 @@ input::-webkit-inner-spin-button {
     margin-bottom: 1rem;
 }
 
+.popup-content {
+    color: white;
+    font-weight: light !important;
+}
+
 .popup-options {
     display: none;
     align-items: end;
@@ -170,13 +178,24 @@ input::-webkit-inner-spin-button {
 
 .popup-button {
     background: none;
-    color: var(--color);
+    color: white;
     border: solid 4px var(--element-color);
     border-radius: 10px;
     padding: 0.3rem 4rem;
     font-size: inherit;
     font-weight: bold;
     margin: 15px 10px;
+    background-color: #2379ee;
+    border: solid 1px #5aa0ff;
+    font-family: Poppins;
+    transition-duration: 0.4s;
+}
+
+.popup-button:hover {
+    background-color: #0d51ad;
+    border: solid 1px #2e6dc5;
+    transition-duration: 0.4s;
+    cursor: pointer
 }
 
 .panel {
@@ -193,3 +212,4 @@ input::-webkit-inner-spin-button {
     z-index: 1;
     pointer-events: all;
 }
+

@@ -1,6 +1,6 @@
 /**
  * @author Luuxis
- * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
+ * Luuxis License v1.0 (voir fichier LICENSE pour les détails en FR/EN)
  */
 
 import { changePanel, accountSelect, database, Slider, config, setStatus, popup, appdata, setBackground } from '../utils.js'
@@ -166,7 +166,7 @@ class Settings {
         javaPathText.textContent = `${await appdata()}/${process.platform == 'darwin' ? this.config.dataDirectory : `.${this.config.dataDirectory}`}/runtime`;
 
         let configClient = await this.db.readData('configClient')
-        let javaPath = configClient?.java_config?.java_path || 'Utiliser la version de java livre avec le launcher';
+        let javaPath = configClient?.java_config?.java_path || 'Java est actuellement géré par le launcher.';
         let javaPathInputTxt = document.querySelector(".java-path-input-text");
         let javaPathInputFile = document.querySelector(".java-path-input-file");
         javaPathInputTxt.value = javaPath;
@@ -192,7 +192,7 @@ class Settings {
 
         document.querySelector(".java-path-reset").addEventListener("click", async () => {
             let configClient = await this.db.readData('configClient')
-            javaPathInputTxt.value = 'Utiliser la version de java livre avec le launcher';
+            javaPathInputTxt.value = 'Java est actuellement géré par le launcher.';
             configClient.java_config.java_path = null
             await this.db.updateData('configClient', configClient);
         });
@@ -251,42 +251,42 @@ class Settings {
             await this.db.updateData('configClient', configClient);
         })
 
-        let themeBox = document.querySelector(".theme-box");
-        let theme = configClient?.launcher_config?.theme || "auto";
+        // let themeBox = document.querySelector(".theme-box");
+        // let theme = configClient?.launcher_config?.theme || "auto";
 
-        if (theme == "auto") {
-            document.querySelector('.theme-btn-auto').classList.add('active-theme');
-        } else if (theme == "dark") {
-            document.querySelector('.theme-btn-sombre').classList.add('active-theme');
-        } else if (theme == "light") {
-            document.querySelector('.theme-btn-clair').classList.add('active-theme');
-        }
+        // if (theme == "auto") {
+        //     document.querySelector('.theme-btn-auto').classList.add('active-theme');
+        // } else if (theme == "dark") {
+        //     document.querySelector('.theme-btn-sombre').classList.add('active-theme');
+        // } else if (theme == "light") {
+        //     document.querySelector('.theme-btn-clair').classList.add('active-theme');
+        // }
 
-        themeBox.addEventListener("click", async e => {
-            if (e.target.classList.contains('theme-btn')) {
-                let activeTheme = document.querySelector('.active-theme');
-                if (e.target.classList.contains('active-theme')) return
-                activeTheme?.classList.remove('active-theme');
+        // themeBox.addEventListener("click", async e => {
+        //     if (e.target.classList.contains('theme-btn')) {
+        //         let activeTheme = document.querySelector('.active-theme');
+        //         if (e.target.classList.contains('active-theme')) return
+        //         activeTheme?.classList.remove('active-theme');
 
-                if (e.target.classList.contains('theme-btn-auto')) {
-                    setBackground();
-                    theme = "auto";
-                    e.target.classList.add('active-theme');
-                } else if (e.target.classList.contains('theme-btn-sombre')) {
-                    setBackground(true);
-                    theme = "dark";
-                    e.target.classList.add('active-theme');
-                } else if (e.target.classList.contains('theme-btn-clair')) {
-                    setBackground(false);
-                    theme = "light";
-                    e.target.classList.add('active-theme');
-                }
+        //         if (e.target.classList.contains('theme-btn-auto')) {
+        //             setBackground();
+        //             theme = "auto";
+        //             e.target.classList.add('active-theme');
+        //         } else if (e.target.classList.contains('theme-btn-sombre')) {
+        //             setBackground(true);
+        //             theme = "dark";
+        //             e.target.classList.add('active-theme');
+        //         } else if (e.target.classList.contains('theme-btn-clair')) {
+        //             setBackground(false);
+        //             theme = "light";
+        //             e.target.classList.add('active-theme');
+        //         }
 
-                let configClient = await this.db.readData('configClient')
-                configClient.launcher_config.theme = theme;
-                await this.db.updateData('configClient', configClient);
-            }
-        })
+        //         let configClient = await this.db.readData('configClient')
+        //         configClient.launcher_config.theme = theme;
+        //         await this.db.updateData('configClient', configClient);
+        //     }
+        // })
 
         let closeBox = document.querySelector(".close-box");
         let closeLauncher = configClient?.launcher_config?.closeLauncher || "close-launcher";

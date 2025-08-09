@@ -1,6 +1,6 @@
 /**
  * @author Luuxis
- * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
+ * Luuxis License v1.0 (voir fichier LICENSE pour les détails en FR/EN)
  */
 // import panel
 import Login from './panels/login.js';
@@ -66,19 +66,19 @@ class Launcher {
 
         document.querySelector(`.${platform} .frame`).classList.toggle('hide')
 
-        document.querySelector(`.${platform} .frame #minimize`).addEventListener('click', () => {
-            ipcRenderer.send('main-window-minimize');
-        });
+        // document.querySelector(`.${platform} .frame #minimize`).addEventListener('click', () => {
+        //     ipcRenderer.send('main-window-minimize');
+        // });
 
-        let maximized = false;
-        let maximize = document.querySelector(`.${platform} .frame #maximize`);
-        maximize.addEventListener('click', () => {
-            if (maximized) ipcRenderer.send('main-window-maximize')
-            else ipcRenderer.send('main-window-maximize');
-            maximized = !maximized
-            maximize.classList.toggle('icon-maximize')
-            maximize.classList.toggle('icon-restore-down')
-        });
+        // let maximized = false;
+        // let maximize = document.querySelector(`.${platform} .frame #maximize`);
+        // maximize.addEventListener('click', () => {
+        //     if (maximized) ipcRenderer.send('main-window-maximize')
+        //     else ipcRenderer.send('main-window-maximize');
+        //     maximized = !maximized
+        //     maximize.classList.toggle('icon-maximize')
+        //     maximize.classList.toggle('icon-restore-down')
+        // });
 
         document.querySelector(`.${platform} .frame #close`).addEventListener('click', () => {
             ipcRenderer.send('main-window-close');
@@ -144,9 +144,9 @@ class Launcher {
                 if (account.meta.type === 'Xbox') {
                     console.log(`Account Type: ${account.meta.type} | Username: ${account.name}`);
                     popupRefresh.openPopup({
-                        title: 'Connexion',
+                        title: 'Chargement...',
                         content: `Refresh account Type: ${account.meta.type} | Username: ${account.name}`,
-                        color: 'var(--color)',
+                        color: 'white',
                         background: false
                     });
 
@@ -169,9 +169,9 @@ class Launcher {
                 } else if (account.meta.type == 'AZauth') {
                     console.log(`Account Type: ${account.meta.type} | Username: ${account.name}`);
                     popupRefresh.openPopup({
-                        title: 'Connexion',
+                        title: 'Chargement...',
                         content: `Refresh account Type: ${account.meta.type} | Username: ${account.name}`,
-                        color: 'var(--color)',
+                        color: 'white',
                         background: false
                     });
                     let refresh_accounts = await new AZauth(this.config.online).verify(account);
@@ -193,9 +193,9 @@ class Launcher {
                 } else if (account.meta.type == 'Mojang') {
                     console.log(`Account Type: ${account.meta.type} | Username: ${account.name}`);
                     popupRefresh.openPopup({
-                        title: 'Connexion',
+                        title: 'Chargement...',
                         content: `Refresh account Type: ${account.meta.type} | Username: ${account.name}`,
-                        color: 'var(--color)',
+                        color: 'white',
                         background: false
                     });
                     if (account.meta.online == false) {

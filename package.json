@@ -1,21 +1,16 @@
 {
-    "name": "Deepstone-Launcher",
-    "preductname": "Deepstone Launcher",
-    "version": "0.0.10",
-    "description": "Launcher Mincraft pour le serveur Deepstone-Launcher",
+    "name": "venstone-launcher",
+    "preductname": "Venstone Launcher",
+    "version": "0.1.4",
+    "description": "https://venstone.xyz",
     "main": "src/app.js",
-    "author": {
-        "name": "metal54400,luuxis, Inc.",
-        "email": "matheocillierfavier@gmail.com , contact@luuxis.fr",
-        "url": "https://github.com/metal54400, https://github.com/luuxis"
-    },
-    "url": "http://minecraft-farms.ddns.net:5504/pages/launcher/config-launcher/config.json",
-    "url":"http://minecraft-farms.ddns.net:5504/files/index.php",
+    "author": "Luuxis, Limeen",
+    "url": "https://venstone.xyz/launcher-data/new/",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
         "build": "node build.js --obf=true --build=platform",
-        "icon": "node build.js --icon=https://minecraft-farms.ddns.net:5501/pages/deepstone/deepstone-icon.png"
+        "icon": "node build.js --icon=https://venstone.xyz/assets/images/venstone.png"
     },
     "license": "CCANC",
     "nodemonConfig": {
@@ -24,7 +19,7 @@
     },
     "dependencies": {
         "electron-updater": "^6.1.8",
-        "minecraft-java-core": "^4.1.1",
+        "minecraft-java-core": "^4.1.4",
         "node-bdd": "^2.0.4",
         "node-fetch": "^2.7.0",
         "xml-js": "^1.6.11"
@@ -40,6 +35,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/metal54400/Deepstone-Launcher.git"
+        "url": "git+https://github.com/Limeen/Lego-Launcher.git"
     }
 }

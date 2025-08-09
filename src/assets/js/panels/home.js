@@ -1,6 +1,6 @@
 /**
  * @author Luuxis
- * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
+ * Luuxis License v1.0 (voir fichier LICENSE pour les détails en FR/EN)
  */
 import { config, database, logger, changePanel, appdata, setStatus, pkg, popup } from '../utils.js'
 
@@ -27,18 +27,18 @@ class Home {
                 blockNews.classList.add('news-block');
                 blockNews.innerHTML = `
                     <div class="news-header">
-                        <img class="server-status-icon" src="assets/images/icon.png">
+                        <!-- <img class="server-status-icon" src="assets/images/icon.png"> -->
                         <div class="header-text">
-                            <div class="title">Début du Launcher</div>
+                            <div class="title">Aucun news n'ai actuellement disponible.</div>
                         </div>
                         <div class="date">
-                            <div class="day">18</div>
-                            <div class="month">Juillet</div>
+                            <div class="day">1</div>
+                            <div class="month">Janvier</div>
                         </div>
                     </div>
                     <div class="news-content">
                         <div class="bbWrapper">
-                            <p>Version de minecraft 1.21.1</p>
+                            <p>Vous pourrez suivre ici toutes les news relative au serveur.</p>
                         </div>
                     </div>`
                 newsElement.appendChild(blockNews);
@@ -49,7 +49,7 @@ class Home {
                     blockNews.classList.add('news-block');
                     blockNews.innerHTML = `
                         <div class="news-header">
-                            <img class="server-status-icon" src="assets/images/icon.png">
+                            <!-- <img class="server-status-icon" src="assets/images/icon.png"> -->
                             <div class="header-text">
                                 <div class="title">${News.title}</div>
                             </div>
@@ -61,7 +61,7 @@ class Home {
                         <div class="news-content">
                             <div class="bbWrapper">
                                 <p>${News.content.replace(/\n/g, '</br>')}</p>
-                                <p class="news-author">Auteur - <span>${News.author}</span></p>
+                                <p class="news-author">${News.author}</span></p>
                             </div>
                         </div>`
                     newsElement.appendChild(blockNews);
@@ -72,7 +72,7 @@ class Home {
             blockNews.classList.add('news-block');
             blockNews.innerHTML = `
                 <div class="news-header">
-                        <img class="server-status-icon" src="assets/images/icon.png">
+                        <!-- <img class="server-status-icon" src="assets/images/icon.png"> -->
                         <div class="header-text">
                             <div class="title">Error.</div>
                         </div>
@@ -110,6 +110,9 @@ class Home {
         let instancePopup = document.querySelector('.instance-popup')
         let instancesListPopup = document.querySelector('.instances-List')
         let instanceCloseBTN = document.querySelector('.close-popup')
+        let createInstanceBTN = document.querySelector('.create-custom-instance')
+
+        let playerheadBTN = document.querySelector('.player-options')
 
         if (instancesList.length === 1) {
             document.querySelector('.instance-select').style.display = 'none'
@@ -195,6 +198,12 @@ class Home {
         })
 
         instanceCloseBTN.addEventListener('click', () => instancePopup.style.display = 'none')
+        createInstanceBTN.addEventListener('click', () => {
+            instancePopup.style.display = 'none'
+            window.open('pages/create-instance.html')
+        })
+        playerheadBTN.addEventListener('click', () => window.open('https://venstone.xyz/skins/changeskin/'))
+
     }
 
     async startGame() {
@@ -298,7 +307,7 @@ class Home {
             };
             new logger('Minecraft', '#36b030');
             ipcRenderer.send('main-window-progress-load')
-            infoStarting.innerHTML = `Demarrage en cours...`
+            infoStarting.innerHTML = `Préparation...`
             console.log(e);
         })
 
@@ -309,7 +318,7 @@ class Home {
             ipcRenderer.send('main-window-progress-reset')
             infoStartingBOX.style.display = "none"
             playInstanceBTN.style.display = "flex"
-            infoStarting.innerHTML = `Vérification`
+            infoStarting.innerHTML = `Vérification...`
             new logger(pkg.name, '#7289da');
             console.log('Close');
         });
@@ -330,7 +339,7 @@ class Home {
             ipcRenderer.send('main-window-progress-reset')
             infoStartingBOX.style.display = "none"
             playInstanceBTN.style.display = "flex"
-            infoStarting.innerHTML = `Vérification`
+            infoStarting.innerHTML = `Vérification...`
             new logger(pkg.name, '#7289da');
             console.log(err);
         });

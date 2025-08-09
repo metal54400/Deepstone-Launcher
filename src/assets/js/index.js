@@ -1,6 +1,6 @@
 /**
  * @author Luuxis
- * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
+ * Luuxis License v1.0 (voir fichier LICENSE pour les détails en FR/EN)
  */
 
 const { ipcRenderer, shell } = require('electron');
@@ -30,13 +30,11 @@ class Splash {
 
     async startAnimation() {
         let splashes = [
-            { "message": "Je... vie...", "author": "metal54400" },
-            { "message": "Salut je suis du code.", "author": "metal54400" },
-            { "message": "Linux n'est pas un os, mais un kernel.", "author": "metal54400" }
+            { "message": "Bienvenue", "author": "" }
         ];
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;
-        this.splashAuthor.children[0].textContent = "@" + splash.author;
+        this.splashAuthor.children[0].textContent = splash.author;
         await sleep(100);
         document.querySelector("#splash").style.display = "block";
         await sleep(500);
@@ -54,7 +52,7 @@ class Splash {
         this.setStatus(`Recherche de mise à jour...`);
 
         ipcRenderer.invoke('update-app').then().catch(err => {
-            return this.shutdown(`erreur lors de la recherche de mise à jour :<br>${err.message}`);
+            return this.shutdown(`Erreur :<br>${err.message}`); // à modifier pour le mode hors-ligne
         });
 
         ipcRenderer.on('updateAvailable', () => {
@@ -76,7 +74,7 @@ class Splash {
         })
 
         ipcRenderer.on('update-not-available', () => {
-            console.error("Mise à jour non disponible");
+            console.error("Mise à jour indisponible.");
             this.maintenanceCheck();
         })
     }
@@ -108,7 +106,7 @@ class Splash {
         this.setStatus(`Mise à jour disponible !<br><div class="download-update">Télécharger</div>`);
         document.querySelector(".download-update").addEventListener("click", () => {
             shell.openExternal(latest.browser_download_url);
-            return this.shutdown("Téléchargement en cours...");
+            return this.shutdown("Téléchargement...");
         });
     }
 
@@ -119,12 +117,12 @@ class Splash {
             this.startLauncher();
         }).catch(e => {
             console.error(e);
-            return this.shutdown("Aucune connexion internet détectée,<br>veuillez réessayer ultérieurement.");
+            return this.shutdown("Problème de connexion.");
         })
     }
 
     startLauncher() {
-        this.setStatus(`Démarrage du launcher`);
+        this.setStatus(`Démarrage...`);
         ipcRenderer.send('main-window-open');
         ipcRenderer.send('update-window-close');
     }

@@ -21,11 +21,42 @@
     display: none;
 }
 
-.login-text {
-    font-size: 1.3rem;
+.login-offline {
+    border: solid 1px #3b3b3b;
 }
 
-.connect,
+.login-text {
+    font-size: 30px;
+}
+
+.login-text-desc {
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.connect {
+    background: none;
+    color: var(--color);
+    background-color: #2379ee;
+    border: solid 1px #5aa0ff;
+    border-radius: 13px;
+    padding: 0.4rem 4rem;
+    font-family: Poppins;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    transition-duration: 0.4s;
+}
+
+.connect:hover {
+    background-color: #0d51ad;
+    border: solid 1px #2e6dc5;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
 .cancel {
     background: none;
     color: var(--color);
@@ -42,9 +73,12 @@
 .A2F {
     color: var(--color);
     background: none;
-    border: solid 2px var(--element-color);
-    border-radius: 30px;
-    width: 50%;
-    padding: 0.4rem 1rem;
+    border: solid 1px #343434;
+    border-radius: 7px;
+    width: 80%;
+    padding: 0.6rem 1rem;
     margin-top: 10px;
+    font-size: 16px;
+    background-color: #181818;
+    font-family: Poppins;
 }

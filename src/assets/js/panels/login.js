@@ -1,6 +1,6 @@
 /**
  * @author Luuxis
- * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
+ * Luuxis License v1.0 (voir fichier LICENSE pour les détails en FR/EN)
  */
 const { AZauth, Mojang } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
@@ -74,6 +74,15 @@ class Login {
                 popupLogin.openPopup({
                     title: 'Erreur',
                     content: 'Votre pseudo doit faire au moins 3 caractères.',
+                    options: true
+                });
+                return;
+            }
+
+            if (emailOffline.value.length > 16) {
+                popupLogin.openPopup({
+                    title: 'Erreur',
+                    content: 'Votre pseudo ne peut pas avoir plus de 16 caractères.',
                     options: true
                 });
                 return;
