@@ -1,16 +1,16 @@
 {
-    "name": "venstone-launcher",
-    "preductname": "Venstone Launcher",
+    "name": "Deepstone-launcher",
+    "preductname": "Deepstone Launcher",
     "version": "0.1.4",
     "description": "https://venstone.xyz",
     "main": "src/app.js",
-    "author": "Luuxis, Limeen",
-    "url": "https://venstone.xyz/launcher-data/new/",
+    "author": "Luuxis, metal54400_",
+    "url": "http://5.48.143.126:5504/launcher/config-launcher/config.json",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
         "build": "node build.js --obf=true --build=platform",
-        "icon": "node build.js --icon=https://venstone.xyz/assets/images/venstone.png"
+        "icon": "node build.js --icon=https://minecraft-farms.ddns.net:5501/pages/deepstone/deepstone-icon.png"
     },
     "license": "CCANC",
     "nodemonConfig": {
@@ -35,6 +35,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Limeen/Lego-Launcher.git"
+        "url": "git+https://github.com/metal54400/Deepstone-Launcher.git"
     }
 }
