@@ -74,16 +74,16 @@ class Home {
                 <div class="news-header">
                         <!-- <img class="server-status-icon" src="assets/images/icon.png"> -->
                         <div class="header-text">
-                            <div class="title">Error.</div>
+                            <div class="title">Mise a jours du Launcher</div>
                         </div>
                         <div class="date">
-                            <div class="day">1</div>
-                            <div class="month">Janvier</div>
+                            <div class="day">12</div>
+                            <div class="month">Août</div>
                         </div>
                     </div>
                     <div class="news-content">
                         <div class="bbWrapper">
-                            <p>Impossible de contacter le serveur des news.</br>Merci de vérifier votre configuration.</p>
+                            <p>Version 1.21.5 est désormais activé sur le Launcher et </br>l'interface du launcher a été mis a jour</p>
                         </div>
                     </div>`
             newsElement.appendChild(blockNews);
