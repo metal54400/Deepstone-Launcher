@@ -1,11 +1,11 @@
 {
     "name": "Deepstone-launcher",
     "preductname": "Deepstone Launcher",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "description": "https://minecraft-farms.ddns.net:5501/pages/deepstone/index.html",
     "main": "src/app.js",
     "author": "Luuxis, metal54400_",
-    "url": "http://192.168.1.171:5506/",
+    "url": "http://5.48.143.126/",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",

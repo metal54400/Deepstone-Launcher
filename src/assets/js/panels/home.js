@@ -77,13 +77,13 @@ class Home {
                             <div class="title">Mise a jours du Launcher</div>
                         </div>
                         <div class="date">
-                            <div class="day">12</div>
+                            <div class="day">20</div>
                             <div class="month">Août</div>
                         </div>
                     </div>
                     <div class="news-content">
                         <div class="bbWrapper">
-                            <p>Version 1.21.5 est désormais activé sur le Launcher et </br>l'interface du launcher a été mis a jour</p>
+                            <p>Version 1.21.8 est désormais activé sur le Launcher et </br>Enfin le launcher est accessible a tous</p>
                         </div>
                     </div>`
             newsElement.appendChild(blockNews);
