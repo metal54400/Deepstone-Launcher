@@ -72,18 +72,18 @@ class Home {
             blockNews.classList.add('news-block');
             blockNews.innerHTML = `
                 <div class="news-header">
-                        <!-- <img class="server-status-icon" src="assets/images/icon.png"> -->
+                         <!--<img class="server-status-icon" src="assets/images/icon.png"> -->
                         <div class="header-text">
                             <div class="title">Mise a jours du Launcher</div>
                         </div>
                         <div class="date">
-                            <div class="day">20</div>
+                            <div class="day">21</div>
                             <div class="month">Août</div>
                         </div>
                     </div>
                     <div class="news-content">
                         <div class="bbWrapper">
-                            <p>Version 1.21.8 est désormais activé sur le Launcher et </br>Enfin le launcher est accessible a tous</p>
+                            <p>petite mise a jours sur les version de Deepstone, 1.20.1 , 1.21.1, 1.21.5, 1.21.8 </br>petit changement au nivaux des instance</p>
                         </div>
                     </div>`
             newsElement.appendChild(blockNews);
