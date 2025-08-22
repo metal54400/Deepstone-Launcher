@@ -66,20 +66,9 @@ class Launcher {
 
         document.querySelector(`.${platform} .frame`).classList.toggle('hide')
 
-        // document.querySelector(`.${platform} .frame #minimize`).addEventListener('click', () => {
-        //     ipcRenderer.send('main-window-minimize');
-        // });
-
-        // let maximized = false;
-        // let maximize = document.querySelector(`.${platform} .frame #maximize`);
-        // maximize.addEventListener('click', () => {
-        //     if (maximized) ipcRenderer.send('main-window-maximize')
-        //     else ipcRenderer.send('main-window-maximize');
-        //     maximized = !maximized
-        //     maximize.classList.toggle('icon-maximize')
-        //     maximize.classList.toggle('icon-restore-down')
-        // });
-
+         document.querySelector(`.${platform} .frame #minimize`).addEventListener('click', () => {
+             ipcRenderer.send('main-window-minimize');
+         });
         document.querySelector(`.${platform} .frame #close`).addEventListener('click', () => {
             ipcRenderer.send('main-window-close');
         })
