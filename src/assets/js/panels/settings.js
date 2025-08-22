@@ -251,42 +251,42 @@ class Settings {
             await this.db.updateData('configClient', configClient);
         })
 
-         let themeBox = document.querySelector(".theme-box");
-         let theme = configClient?.launcher_config?.theme || "auto";
+        // let themeBox = document.querySelector(".theme-box");
+        // let theme = configClient?.launcher_config?.theme || "auto";
 
-         if (theme == "auto") {
-            document.querySelector('.theme-btn-auto').classList.add('active-theme');
-             } else if (theme == "dark") {
-             document.querySelector('.theme-btn-sombre').classList.add('active-theme');
-         } else if (theme == "light") {
-             document.querySelector('.theme-btn-clair').classList.add('active-theme');
-         }
+        // if (theme == "auto") {
+        //     document.querySelector('.theme-btn-auto').classList.add('active-theme');
+        // } else if (theme == "dark") {
+        //     document.querySelector('.theme-btn-sombre').classList.add('active-theme');
+        // } else if (theme == "light") {
+        //     document.querySelector('.theme-btn-clair').classList.add('active-theme');
+        // }
 
-         themeBox.addEventListener("click", async e => {
-             if (e.target.classList.contains('theme-btn')) {
-             let activeTheme = document.querySelector('.active-theme');
-                 if (e.target.classList.contains('active-theme')) return
-                 activeTheme?.classList.remove('active-theme');
+        // themeBox.addEventListener("click", async e => {
+        //     if (e.target.classList.contains('theme-btn')) {
+        //         let activeTheme = document.querySelector('.active-theme');
+        //         if (e.target.classList.contains('active-theme')) return
+        //         activeTheme?.classList.remove('active-theme');
 
-                if (e.target.classList.contains('theme-btn-auto')) {
-                     setBackground();
-                 theme = "auto";
-                     e.target.classList.add('active-theme');
-                 } else if (e.target.classList.contains('theme-btn-sombre')) {
-                     setBackground(true);
-                     theme = "dark";
-                     e.target.classList.add('active-theme');
-                 } else if (e.target.classList.contains('theme-btn-clair')) {
-                     setBackground(false);
-                    theme = "light";
-                     e.target.classList.add('active-theme');
-                 }
+        //         if (e.target.classList.contains('theme-btn-auto')) {
+        //             setBackground();
+        //             theme = "auto";
+        //             e.target.classList.add('active-theme');
+        //         } else if (e.target.classList.contains('theme-btn-sombre')) {
+        //             setBackground(true);
+        //             theme = "dark";
+        //             e.target.classList.add('active-theme');
+        //         } else if (e.target.classList.contains('theme-btn-clair')) {
+        //             setBackground(false);
+        //             theme = "light";
+        //             e.target.classList.add('active-theme');
+        //         }
 
-                 let configClient = await this.db.readData('configClient')
-                 configClient.launcher_config.theme = theme;
-                 await this.db.updateData('configClient', configClient);
-             }
-         })
+        //         let configClient = await this.db.readData('configClient')
+        //         configClient.launcher_config.theme = theme;
+        //         await this.db.updateData('configClient', configClient);
+        //     }
+        // })
 
         let closeBox = document.querySelector(".close-box");
         let closeLauncher = configClient?.launcher_config?.closeLauncher || "close-launcher";
@@ -324,4 +324,39 @@ class Settings {
         })
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const advancedToggle = document.getElementById('advanced-features-toggle');
+    const advancedOptions = document.querySelector('.advanced-options');
+
+    // Masquer les options avancées au chargement
+    if (advancedOptions) advancedOptions.style.display = 'none';
+
+    if (advancedToggle && advancedOptions) {
+        // Charger l'état depuis le localStorage
+        const enabled = localStorage.getItem('advancedFeaturesEnabled') === 'true';
+        advancedToggle.checked = enabled;
+        advancedOptions.style.display = enabled ? 'flex' : 'none';
+
+        advancedToggle.addEventListener('change', function () {
+            localStorage.setItem('advancedFeaturesEnabled', advancedToggle.checked);
+            advancedOptions.style.display = advancedToggle.checked ? 'flex' : 'none';
+        });
+    }
+
+    // Exemple d'action sur un bouton avancé
+    document.querySelector('.debug-console-btn')?.addEventListener('click', () => {
+        alert('Console de débogage ouverte !');
+    });
+    document.querySelector('.show-logs-btn')?.addEventListener('click', () => {
+        alert('Affichage des logs détaillés !');
+    });
+    document.querySelector('.system-settings-btn')?.addEventListener('click', () => {
+        alert('Ouverture des paramètres système !');
+    });
+    document.querySelector('.experimental-modules-btn')?.addEventListener('click', () => {
+        alert('Modules expérimentaux activés !');
+    });
+});
+
 export default Settings;

@@ -1,7 +1,7 @@
 {
     "name": "Deepstone-launcher",
     "preductname": "Deepstone Launcher",
-    "version": "0.0.16.1",
+    "version": "0.0.17",
     "description": "https://minecraft-farms.ddns.net:5501/pages/deepstone/index.html",
     "main": "src/app.js",
     "author": "Luuxis, metal54400_",
